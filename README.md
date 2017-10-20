@@ -2,6 +2,12 @@
 
 Repository for the voluntary Challenge Exercise in the Master's course "Operating Systems".
 
+## TODO
+- finish the container
+- create a dockerfile with the container
+- add tutorials for dockerfile
+- update installation instructions
+
 ## Install docker
 
 As host environment for the docker container Ubuntu 16.04 LTS (64 Bit) was used. To install docker exexcute this on the Ubuntu host machine:
