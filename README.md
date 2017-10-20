@@ -47,6 +47,15 @@ The dockerfile executes the following installation for you and delivers a fully 
 ```shell
 docker run -it -p hostPort:containerPort gcr.io/tensorflow/tensorflow:lates-devel bash
 ```
+An existing machine can be resumed and accessed with:
+```shell
+sudo docker start [machine name]
+sudo docker attach [machine name]
+```
+The machine name can be found using:
+```shell
+sudo docker ps -a
+```
 #### GPU support TODO
 
 
@@ -97,10 +106,7 @@ $python object_detection/builders/model_builder_test.py
 source: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
 
 ## 4. Usage
-
-Start the container using:
-
-To edit and run the jupyter notebook navigate to the /tensorflow/models/research/object_detection/ folder and run the notebook server with:
+To edit and run the jupyter notebook navigate in the container to the /tensorflow/models/research/object_detection/ folder and run the notebook server with:
 ```shell
 jupyter notebook --allow-root
 ```
