@@ -60,6 +60,14 @@ sudo pip install lxml
 sudo pip install matplotlib
 ```
 
+### Install the object detection API
+
+Clone into: 
+```shell
+git clone https://github.com/tensorflow/models.git
+```
+Download the files. The folder does not matter but for the dockerfile the models folder is in /tensorflow/tensorflow/models
+
 #### Install Protbuf Compiler in the container
 Check for latest protoc version with:
 ```shell
@@ -87,6 +95,22 @@ $python object_detection/builders/model_builder_test.py
 ```
 source: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
 
+### 4. Usage
+
+Start the container using:
+
+To edit and run the jupyter notebook navigate to the /tensorflow/models/research/object_detection/ folder and run the notebook server with:
+```shell
+jupyter notebook --allow-root
+```
+Or just run the python script in the same folder with:
+```shell
+//TODO
+```
+
+Once started the the container sends the collected metadata (amount of cars, array with their positions in the image, and probability for each car to actually be a car) to a server.
+
+//TODO specify the server as input arg for python script
 
 
 
