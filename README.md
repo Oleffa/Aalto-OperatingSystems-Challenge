@@ -7,6 +7,7 @@ Repository for the voluntary Challenge Exercise in the Master's course "Operatin
 - create a dockerfile with the container
 - add tutorials for dockerfile
 - update installation instructions
+- sensitivity higher to detect cars also below 50% probability
 
 
 ## 1. Install docker
@@ -60,7 +61,7 @@ sudo pip install lxml
 sudo pip install matplotlib
 ```
 
-### Install the object detection API
+### c) Install the object detection API
 
 Clone into: 
 ```shell
@@ -95,7 +96,7 @@ $python object_detection/builders/model_builder_test.py
 ```
 source: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
 
-### 4. Usage
+## 4. Usage
 
 Start the container using:
 
