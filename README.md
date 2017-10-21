@@ -3,11 +3,9 @@
 Repository for the voluntary Challenge Exercise in the Master's course "Operating Systems".
 
 ## 0. TODO
-- finish the container
 - create a dockerfile with the container
 - add tutorials for dockerfile
 - update installation instructions
-- sensitivity higher to detect cars also below 50% probability
 
 
 ## 1. Install docker
@@ -97,11 +95,11 @@ protoc object\_detection/protos/*.proto --python_out=.
 #### Add Libraries to Pythonpath
 Run this command in every terminal started or add them to your ~/.bashrc
 ```shell
-$export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 #### Verify the installation
 ```shell
-$python object_detection/builders/model_builder_test.py
+python object_detection/builders/model_builder_test.py
 ```
 source: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
 
@@ -112,12 +110,22 @@ jupyter notebook --allow-root
 ```
 Or just run the python script in the same folder with:
 ```shell
-//TODO
+python car_detector.py
 ```
 
-Once started the the container sends the collected metadata (amount of cars, array with their positions in the image, and probability for each car to actually be a car) to a server.
+Once started the the container starts collection image data from the web adress http://tpark-cam.cs.aalto.fi/ which is used for demonstration purposes. The script can also be altered to use locally saved images and a further improvement for the image acquisition could be, instead of downloading, to push image data to the tensor flow program.
 
-//TODO specify the server as input arg for python script
+TensorFlow is then using the Object Detection API to find objects in the received image. Due to the bad quality of the demo image stream the sensitivy of the system was set to a value of 0.3 which means that objects that are 40% or more likely to be a car will be counted.
+
+The metadata (amount of cars, array with their positions in the image, and probability for each car to actually be a car) is then sent to the data handler.
+
+The data handler is saving the data in a database and provides an interface for an application or a user to get the data from there using HTTP.
+
+## The Data Handler
+
+The data handler consists of one or more dyno (https://devcenter.heroku.com/articles/dynos) containers running in a heroku (https://www.heroku.com/) web application. This allows the data handling to be scaled to whatever needs the application has.
+The metadata coming from the tensor flow docker containers is sent to the handler using the POST request method. The metadata is saved in a Mongo database and can be queried using HTTP and a Node JS interface.
+
 
 
 
