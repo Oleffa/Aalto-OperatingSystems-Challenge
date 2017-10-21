@@ -33,11 +33,15 @@ sudo docker run hello-world
 sources: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
 
 
-## 2. Using the dockerfile
-
-//TODO how to install the dockerfile
-
-The dockerfile executes the following installation for you and delivers a fully functional docker container.
+## 2. Using the docker image
+The docker container as can be found in //TODO link and was exported using:
+```shell
+sudo docker export [container name] | gzip car_detector.tar.gz
+```
+It can be downloaded and imported/reused with docker using:
+```shell
+sudo docker import
+```
 
 ## 3. Manual installation
 ### a) Using a docker image with tensorflow binaries
