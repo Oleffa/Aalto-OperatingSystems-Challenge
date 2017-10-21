@@ -47,7 +47,7 @@ sudo docker import
 ### a) Using a docker image with tensorflow binaries
 #### Execute the following commands on the host system to start a docker container with CPU support only and connect via bash:
 ```shell
-docker run -it -p hostPort:containerPort gcr.io/tensorflow/tensorflow:lates-devel bash
+docker run -it -p hostPort:containerPort gcr.io/tensorflow/tensorflow:latest-devel bash
 ```
 An existing machine can be resumed and accessed with:
 ```shell
