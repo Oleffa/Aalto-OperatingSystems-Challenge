@@ -123,6 +123,8 @@ The data handler is saving the data in a database and provides an interface for 
 
 ## The Data Handler
 
+The repository with the implementation of the data handler can be found here: https://github.com/cell2749/ImageProcessingDataHandler
+
 The data handler consists of one or more dyno (https://devcenter.heroku.com/articles/dynos) containers running in a heroku (https://www.heroku.com/) web application. This allows the data handling to be scaled to whatever needs the application has.
 The metadata coming from the tensor flow docker containers is sent to the handler using the POST request method. The metadata is saved in a Mongo database and can be queried using HTTP and a Node JS interface.
 
