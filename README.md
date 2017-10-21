@@ -10,11 +10,11 @@ Repository for the voluntary Challenge Exercise in the Master's course "Operatin
 
 ## 1. Install docker
 
-As host environment for the docker container Ubuntu 16.04 LTS (64 Bit) was used. To install docker exexcute this on the Ubuntu host machine:
+As host environment for the docker container Ubuntu 16.04 LTS (64 Bit) was used. To install docker execute this on the Ubuntu host machine:
 ```shell
 sudo apt-get update
 sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
-sudo apt-get isntall apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 ```
 Add the docker PGP key to the host machine:
 ```shell
@@ -26,7 +26,7 @@ Finally install docker:
 sudo apt-get update
 sudo apt-get install docker-ce
 ```
-To verify the installtion run:
+To verify the installation run:
 ```shell
 sudo docker run hello-world
 ```
@@ -38,7 +38,7 @@ The docker container as can be found in //TODO link and was exported using:
 ```shell
 sudo docker export [container name] | gzip car_detector.tar.gz
 ```
-It can be downloaded and imported/reused with docker using:
+It can be downloaded from https://1drv.ms/u/s!Aoi3Wc_cMCrSsfpj5Ldlzqb5U39-tg and imported/reused with docker using:
 ```shell
 sudo docker import
 ```
@@ -117,9 +117,9 @@ Or just run the python script in the same folder with:
 python car_detector.py
 ```
 
-Once started the the container starts collection image data from the web adress http://tpark-cam.cs.aalto.fi/ which is used for demonstration purposes. The script can also be altered to use locally saved images and a further improvement for the image acquisition could be, instead of downloading, to push image data to the tensor flow program.
+Once started the container starts collection image data from the web address http://tpark-cam.cs.aalto.fi/ which is used for demonstration purposes. The script can also be altered to use locally saved images and a further improvement for the image acquisition could be, instead of downloading, to push image data to the tensor flow program.
 
-TensorFlow is then using the Object Detection API to find objects in the received image. Due to the bad quality of the demo image stream the sensitivy of the system was set to a value of 0.3 which means that objects that are 40% or more likely to be a car will be counted.
+TensorFlow is then using the Object Detection API to find objects in the received image. Due to the bad quality of the demo image stream the sensitivity of the system was set to a value of 0.3 which means that objects that are 40% or more likely to be a car will be counted.
 
 The metadata (amount of cars, array with their positions in the image, and probability for each car to actually be a car) is then sent to the data handler.
 
