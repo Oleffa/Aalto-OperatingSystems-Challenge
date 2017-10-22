@@ -3,9 +3,8 @@
 Repository for the voluntary Challenge Exercise in the Master's course "Operating Systems".
 
 ## 0. TODO
-- create a dockerfile with the container
-- add tutorials for dockerfile
-- update installation instructions
+- Rework docker import
+- Tensorflow GPU support
 
 
 ## 1. Install docker
@@ -34,7 +33,7 @@ sources: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
 
 
 ## 2. Using the docker image
-The docker container as can be found in //TODO link and was exported using:
+The docker container image was exported using:
 ```shell
 sudo docker export [container name] | gzip car_detector.tar.gz
 ```
@@ -42,6 +41,8 @@ It can be downloaded from https://1drv.ms/u/s!Aoi3Wc_cMCrSsfpj5Ldlzqb5U39-tg and
 ```shell
 sudo docker import
 ```
+
+More information: https://docs.docker.com/engine/reference/commandline/import/
 
 ## 3. Manual installation
 ### a) Using a docker image with tensorflow binaries
