@@ -2,6 +2,8 @@
 
 Repository for the voluntary Challenge Exercise in the Master's course "Operating Systems".
 
+Presentation Video: https://youtu.be/YA1CG8ZNVCY
+
 ## 0. TODO
 - Rework docker import
 - Tensorflow GPU support
